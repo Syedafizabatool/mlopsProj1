@@ -15,7 +15,7 @@ X_train ,X_test, y_train ,y_test = train_test_split (X,y,test_size=0.2,random_st
 y_pred =model.predict(X_test)
 
 #Calculate Accuray
-accuracy= accuray_score (y_test,y_pred)
+accuracy= accuracy_score (y_test,y_pred)
 
 #Page title
 st.title("Model Accuracy and Real-Time Prediction")
@@ -26,7 +26,7 @@ st.write(f"Model{accuracy}")
 st.header("Real-Time Prediction")
 input_data =[]
 for col in X_test.columns:
-     input_value =st.number_input( f'Input for feature'{col}' , value='')
+     input_value=st.number_input(f'Input for feature{col}',value='0.0')
      input_data.append(input_value)
 input_df=pd.DataFrame([input_data],columns=X_test.columns)     
 #Make predictions
